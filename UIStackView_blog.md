@@ -88,7 +88,7 @@ Take this simple layout, which consists of nested stack views:
 
 If this layout is used in landscape, it gets a bit squashed:
 
-![Screen shot of the layout in landscape](PostResources/Landscape.png)
+![Screen shot of the squashedlayout in landscape](PostResources/LandscapeSquashed.png)
 
 To improve the appearance of this view, we can give the stack view different `axis` values depending on the size class. In this example, we could pick a vertical layout for compact width, but a horizontal layout for compact height. This means we can alter the whole layout of the screen without writing one line of code!
 
@@ -96,13 +96,19 @@ To improve the appearance of this view, we can give the stack view different `ax
 
 The same thing can be applied to the _Alignment_, _Distribution_, _Spacing_, _Baseline Relative_ and _Layout Margins Relative_ attributes. The above example uses a spacing of 19 for the compact height size class. This is exactly the same as the way constraints can be adjusted for different size classes.
 
-Now when rotating the device, the layout changes to a horizontally stacked group:
+Now when rotating the device, the layout changes to a horizontally stacked group (well it should [^2]):
 
+![Screen shot of the layout in landscape](PostResources/Landscape.png)
+<small>_GIF to follow once bug is fixed_</small>
+<!--
 ![Animation showing the transition from a vertical stack to a horizontal stack on rotation](PostResources/)
+-->
 
-This can be taken further; for example, having 4 rows of items when there is a compact width, 4 columns when there is a compact height, and any other layouts showing a 2x2 grid:
+[^2]: This does not actually work in iOS 9 beta 1 (https://forums.developer.apple.com/message/10510#10510)
 
-![Animation showing the transition from 4 rows, to 2x2 to 4 columns](PostResources/)
+This can be taken further; for example, having 4 rows of items when there is a compact width, 4 columns when there is a compact height with a regular width, and any other layouts showing a 2x2 grid:
+
+![Animation showing the transition from 4 rows, to 2x2 to 4 columns](PostResources/SizeClassGrid.gif)
 
 The above example was completely created in Interface Builder without any code.
 
