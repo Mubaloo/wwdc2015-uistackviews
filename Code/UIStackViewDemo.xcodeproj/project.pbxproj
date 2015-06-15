@@ -14,6 +14,7 @@
 		4445DABB1B278077009C3410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4445DABA1B278077009C3410 /* Assets.xcassets */; };
 		4445DABE1B278077009C3410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4445DABC1B278077009C3410 /* LaunchScreen.storyboard */; };
 		4445DACC1B278628009C3410 /* AnimatedStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445DACB1B278628009C3410 /* AnimatedStackViewController.swift */; };
+		44C350D21B2F785C00C0E037 /* GridStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C350D11B2F785C00C0E037 /* GridStackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4445DABD1B278077009C3410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4445DABF1B278077009C3410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4445DACB1B278628009C3410 /* AnimatedStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedStackViewController.swift; sourceTree = "<group>"; };
+		44C350D11B2F785C00C0E037 /* GridStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridStackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				4445DAB31B278077009C3410 /* DynamicStackViewController.swift */,
 				4445DAB51B278077009C3410 /* RotatingStackViewController.swift */,
 				4445DACB1B278628009C3410 /* AnimatedStackViewController.swift */,
+				44C350D11B2F785C00C0E037 /* GridStackViewController.swift */,
 				4445DAB71B278077009C3410 /* Main.storyboard */,
 				4445DABA1B278077009C3410 /* Assets.xcassets */,
 				4445DABC1B278077009C3410 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4445DACC1B278628009C3410 /* AnimatedStackViewController.swift in Sources */,
+				44C350D21B2F785C00C0E037 /* GridStackViewController.swift in Sources */,
 				4445DAB61B278077009C3410 /* RotatingStackViewController.swift in Sources */,
 				4445DAB21B278077009C3410 /* AppDelegate.swift in Sources */,
 				4445DAB41B278077009C3410 /* DynamicStackViewController.swift in Sources */,

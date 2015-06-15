@@ -539,9 +539,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Rotating" image="second" id="cPa-gy-q4n" userLabel="Rotation"/>
-                    <connections>
-                        <outlet property="stack" destination="c3K-UF-xTD" id="WLP-tM-hNM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -1117,7 +1114,7 @@
                                             <rect key="frame" x="0.0" y="368.5" width="360" height="178.5"/>
                                         </variation>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" layoutMarginsRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1DN-Vy-psJ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1DN-Vy-psJ">
                                         <rect key="frame" x="0.0" y="370" width="560" height="117"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NiX-tm-iMQ">
@@ -1226,10 +1223,10 @@
             </objects>
             <point key="canvasLocation" x="758" y="1891"/>
         </scene>
-        <!--Item-->
+        <!--Grid-->
         <scene sceneID="a9h-cm-fnb">
             <objects>
-                <viewController id="eex-gr-rCf" sceneMemberID="viewController">
+                <viewController id="eex-gr-rCf" userLabel="Grid" customClass="GridStackViewController" customModule="UIStackViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PmB-8F-QTx"/>
                         <viewControllerLayoutGuide type="bottom" id="W5R-69-7BU"/>
@@ -1238,6 +1235,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvP-8A-PM6">
+                                <rect key="frame" x="279" y="290" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.98594671489999997" green="0.0" blue="0.039444990460000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ut9-jF-2eS" userLabel="Root Stack View">
                                 <rect key="frame" x="20" y="0.0" width="560" height="551"/>
                                 <subviews>
@@ -1335,13 +1340,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KvP-8A-PM6" firstAttribute="centerY" secondItem="ZDK-kO-Tef" secondAttribute="centerY" id="2UO-dg-bDw"/>
                             <constraint firstItem="Ut9-jF-2eS" firstAttribute="leading" secondItem="ZDK-kO-Tef" secondAttribute="leadingMargin" id="3QL-4B-8Ug"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ut9-jF-2eS" secondAttribute="trailing" id="PPe-rP-Rek"/>
+                            <constraint firstItem="KvP-8A-PM6" firstAttribute="centerX" secondItem="ZDK-kO-Tef" secondAttribute="centerX" id="TUy-hy-jBx"/>
                             <constraint firstItem="Ut9-jF-2eS" firstAttribute="top" secondItem="ZDK-kO-Tef" secondAttribute="topMargin" id="Yjb-I1-vVo"/>
                             <constraint firstItem="W5R-69-7BU" firstAttribute="top" secondItem="Ut9-jF-2eS" secondAttribute="bottom" id="fDu-2L-gY9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="euY-iD-zXq"/>
+                    <tabBarItem key="tabBarItem" title="Grid" id="euY-iD-zXq"/>
+                    <connections>
+                        <outlet property="label" destination="KvP-8A-PM6" id="eKZ-Ff-gbO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uhp-F2-IZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
