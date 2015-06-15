@@ -25,8 +25,6 @@
 		4445DABA1B278077009C3410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4445DABD1B278077009C3410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4445DABF1B278077009C3410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4445DAC51B27814A009C3410 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4445DAC71B2781C5009C3410 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4445DACB1B278628009C3410 /* AnimatedStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedStackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,8 +42,6 @@
 		4445DAA51B278077009C3410 = {
 			isa = PBXGroup;
 			children = (
-				4445DAC51B27814A009C3410 /* README.md */,
-				4445DAC71B2781C5009C3410 /* LICENSE */,
 				4445DAB01B278077009C3410 /* UIStackViewDemo */,
 				4445DAAF1B278077009C3410 /* Products */,
 			);
