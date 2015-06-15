@@ -99,7 +99,7 @@ The same thing can be applied to the _Alignment_, _Distribution_, _Spacing_, _Ba
 Now when rotating the device, the layout changes to a horizontally stacked group (well it should [^2]):
 
 ![Screen shot of the layout in landscape](PostResources/Landscape.png)
-<small>_GIF to follow once bug is fixed_</small>
+<small>_Animated example to follow once bug is fixed_</small>
 <!--
 ![Animation showing the transition from a vertical stack to a horizontal stack on rotation](PostResources/)
 -->
@@ -109,6 +109,7 @@ Now when rotating the device, the layout changes to a horizontally stacked group
 This can be taken further; for example, having 4 rows of items when there is a compact width, 4 columns when there is a compact height with a regular width, and any other layouts showing a 2x2 grid:
 
 ![Animation showing the transition from 4 rows, to 2x2 to 4 columns](PostResources/SizeClassGrid.gif)
+<small>_Better example to follow once bug is fixed_</small>
 
 The above example was completely created in Interface Builder without any code.
 
