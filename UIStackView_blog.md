@@ -1,6 +1,7 @@
-#UIStackView#
+# UIStackView
 
-##The old way##
+## The Old Way
+
 Often in many of our apps we usually have a screen somewhere consisting of a few to many text fields where the user enters in some information. A classic example of this is a registration page.
 
 ![Registration page](registration_uk.png)
@@ -8,7 +9,8 @@ Often in many of our apps we usually have a screen somewhere consisting of a few
 If the page is pretty simple - all fields must be filled out to continue, the simplest way is often to have each field as a cell in a `UITableView`. If the UI is a bit more complex, you can have prototypes for the different styles. After you're finished you're most likely left with a rather large `tableView:cellForRowAtIndexPath:` method with a switch statement configuring each row/field.
 Xcode 6 improved on this with the addition of a static option to a `UITableViewController`. This allowed you to create all the different cells you needed, and then hook up the fields as `IBOutlet`s. Interface Builder also supported sections, including their headers and footers.
 
-###Making it more complicated###
+### Making It More Complicated
+
 As I've said using a table view is usually fine for simple cases, but typically there's dependencies for fields based on the input of other fields. In the above example, if you select United States as the country, another field appears to allow you to pick your state. 
 
 ![Dynamic content part of regstration](registration_us.png)
@@ -17,7 +19,8 @@ This now makes using a `UITableView` for screens like this a ball-ache. You have
 
 This registration page was actually constructed using constraints to keep things simpler and also static tables were not available when the app was created. The layout is based on `UIView`s as containers all placed in a `UIScrollView`. The visibility of the dependent fields was then controlled by changing the `constant` property of the various constraints and updating the `hidden` property of the view. While this solution worked, there just seemed a bit too much layout code for such a simple thing!
 
-##WWDC 2015 and Stack Views##
+## WWDC 2015 and Stack Views
+
 As usual at WWDC Apple introduced the new technologies for developers with their typical slide:
 
 ![WWDC 2015: New dev technologies](wwdc_2015_dev_anno.png)
@@ -33,7 +36,8 @@ It is worth reading however the section in the docs about _Maintaining Consisten
 
 I'm going to cover some use cases and some cool stuff you can do when changing the layouts.
 
-###Simplicity###
+### Simplicity
+
 Take the following layout:
 
 ![Screen shot of Interface Builder showing all the constraints](Constraints.png)
@@ -46,7 +50,8 @@ There are only **4** constraints to layout the stack view in its container and t
 Also when dragging a view into the stack view Interface Builder places the view in the correct position and gives it the correct frame - no longer needing to constantly use the _Update Frames_ menu option.
 This layout uses 4 stack views of different orientations. The top two rows are nested horizontal stack views, with the first row having another nested vertical stack view inside of that.
 
-##Dynamic layouts##
+## Dynamic Layouts
+
 Now lets go back to our original problem of having a views visibility being based on the input of other views.
 
 ![Screen shot of dynamic stack view layout](Dynamic.png)
@@ -70,7 +75,8 @@ Reconfiguring nested stack views in any animation block can give simple but effe
 
 ![Animated GIF of changing stack view properties in an animation block](StackViewAnimation.gif)
 
-##Size Classes##
+## Size Classes
+
 Another great features of stack view is that it allows its layout to be based on size class in Interface Builder.
 
 Take this simple layout which consists of nested stack views.
@@ -102,8 +108,9 @@ The above example was completely created in Interface Builder without any code.
 
 The _Root Stack View_ is given a default axis of horizontal and then a vertical axis for compact widths. The two inner stack views then both have horizontal axises for a compact height, falling back to vertical when needed.
 
-##Other resources##
-The demo code for the examples can be viewed on Mubaloo's GitHub account.
+## Other Resources
+
+The demo code for the examples can be viewed on Mubaloo's GitHub account. // TODO: Link
 
 As mentioned the [pre-release docs](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html) are also a great place to start as well as the WWDC session [Implementing UI Designs in Interface Builder](https://developer.apple.com/videos/wwdc/2015/?id=407).
 
