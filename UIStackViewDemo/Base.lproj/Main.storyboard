@@ -2,31 +2,230 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Dynamic-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="UIStackViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="DynamicStackViewController" customModule="UIStackViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                        <viewControllerLayoutGuide type="top" id="frS-Zt-fWq"/>
+                        <viewControllerLayoutGuide type="bottom" id="jhG-fP-UDd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="y1d-cQ-enH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="GVc-3e-vPX">
+                                <rect key="frame" x="120" y="0.0" width="360" height="355"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yr8-3q-t4p">
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="20.5"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="20.5"/>
+                                        </variation>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qxd-Qj-vsW">
+                                        <rect key="frame" x="0.0" y="42.5" width="360" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="42.5" width="240" height="30"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="42.5" width="240" height="30"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="42.5" width="480" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="doTextFieldTextChangedAction" destination="9pv-A4-QxB" eventType="editingChanged" id="amD-LB-7QW"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg4-dO-33C" userLabel="Entry">
+                                        <rect key="frame" x="0.0" y="94.5" width="360" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="94.5" width="360" height="20.5"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="94.5" width="240" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="94.5" width="240" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="94.5" width="480" height="20.5"/>
+                                        </variation>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-cx-PRP">
+                                        <rect key="frame" x="0.0" y="137" width="360" height="29"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                            <segment title="Both"/>
+                                            <segment title="None"/>
+                                        </segments>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="137" width="240" height="29"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="137" width="240" height="29"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="137" width="480" height="29"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="doLabelControlChangedAction" destination="9pv-A4-QxB" eventType="valueChanged" id="EUo-K0-ARI"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First segment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-HT-v0G" userLabel="FirstLabel">
+                                        <rect key="frame" x="0.0" y="187" width="360" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="187" width="360" height="20.5"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="187" width="240" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="187" width="240" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="187" width="480" height="20.5"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second Segment" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9on-7x-d8i" userLabel="SecondLabel">
+                                        <rect key="frame" x="0.0" y="229.5" width="360" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="229.5" width="360" height="20.5"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="229.5" width="240" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="229.5" width="240" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="229.5" width="480" height="20.5"/>
+                                        </variation>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lub-gF-jjD">
+                                        <rect key="frame" x="0.0" y="272" width="362" height="31"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="272" width="242" height="31"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="272" width="242" height="31"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="272" width="482" height="31"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="doImageSwitchChangedAction" destination="9pv-A4-QxB" eventType="valueChanged" id="DeB-dj-37z"/>
+                                        </connections>
+                                    </switch>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="x2Q-Q2-xQM">
+                                        <rect key="frame" x="0.0" y="325" width="360" height="30"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="251" fixedFrame="YES" image="second" translatesAutoresizingMaskIntoConstraints="NO" id="fUk-d0-Xup">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="248" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYf-58-xjg">
+                                                <rect key="frame" x="38" y="0.0" width="322" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="38" y="0.0" width="202" height="30"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="38" y="0.0" width="202" height="30"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="38" y="0.0" width="442" height="30"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="325" width="240" height="30"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="325" width="240" height="30"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="325" width="480" height="30"/>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GVc-3e-vPX" firstAttribute="centerX" secondItem="y1d-cQ-enH" secondAttribute="centerX" id="3mF-t6-V5d"/>
+                            <constraint firstItem="GVc-3e-vPX" firstAttribute="width" secondItem="y1d-cQ-enH" secondAttribute="width" multiplier="0.6" id="WkU-KH-Iud"/>
+                            <constraint firstItem="GVc-3e-vPX" firstAttribute="top" secondItem="y1d-cQ-enH" secondAttribute="top" id="gcR-C1-7NM"/>
+                            <constraint firstAttribute="bottom" secondItem="GVc-3e-vPX" secondAttribute="bottom" id="zrT-rz-Ik0"/>
+                        </constraints>
+                        <variation key="heightClass=compact" ambiguous="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        </variation>
+                        <variation key="heightClass=regular" ambiguous="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        </variation>
+                        <variation key="widthClass=compact" ambiguous="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="800" height="400"/>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                        </variation>
+                    </scrollView>
+                    <tabBarItem key="tabBarItem" title="Dynamic" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="firstDependentLabel" destination="Tap-HT-v0G" id="xbl-iH-XWh"/>
+                        <outlet property="imageRow" destination="x2Q-Q2-xQM" id="CgO-bs-iOE"/>
+                        <outlet property="imageSwitch" destination="Lub-gF-jjD" id="2Tq-Jo-phu"/>
+                        <outlet property="labelControl" destination="CWO-cx-PRP" id="mt6-wA-Sz7"/>
+                        <outlet property="secondDependentLabel" destination="9on-7x-d8i" id="yvo-17-ZzP"/>
+                        <outlet property="textField" destination="Qxd-Qj-vsW" id="uxT-6M-Mf9"/>
+                        <outlet property="textFieldEntryLabel" destination="Tg4-dO-33C" id="YD9-qc-88a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--Rotating-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="UIStackViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" userLabel="Rotating" customClass="RotatingStackViewController" customModule="UIStackViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -34,13 +233,958 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="c3K-UF-xTD">
+                                <rect key="frame" x="20" y="20" width="560" height="531"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LvE-DU-uvu">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="128.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JG3-cD-6W1">
+                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="128.5"/>
+                                                <color key="backgroundColor" cyan="1" magenta="0.0" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="178.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="128.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="78.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="58.5" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="178.5"/>
+                                                </variation>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="epA-LI-f6s">
+                                                <rect key="frame" x="186.5" y="0.0" width="187" height="128.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ExJ-Q9-RUB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="43"/>
+                                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="110.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="59.5"/>
+                                                        </variation>
+                                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="43"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="26"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="58.5" height="110.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="59.5"/>
+                                                        </variation>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJ2-kF-do2">
+                                                        <rect key="frame" x="0.0" y="43" width="187" height="42.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="110.5" width="42" height="110"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="59.5" width="187" height="59.5"/>
+                                                        </variation>
+                                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="43" width="120" height="42.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="26" width="120" height="26"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="110.5" width="58.5" height="110"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="59.5" width="120" height="59.5"/>
+                                                        </variation>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsP-6M-p0A">
+                                                        <rect key="frame" x="0.0" y="85.5" width="187" height="43"/>
+                                                        <color key="backgroundColor" red="0.98594671489999997" green="0.0" blue="0.039444990460000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="220.5" width="42" height="110.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="119" width="187" height="59.5"/>
+                                                        </variation>
+                                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="85.5" width="120" height="43"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="52" width="120" height="26.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="220.5" width="58.5" height="110.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="119" width="120" height="59.5"/>
+                                                        </variation>
+                                                    </view>
+                                                </subviews>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="42" y="0.0" width="42" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="186.5" y="0.0" width="187" height="178.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="128.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="78.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="58.5" y="0.0" width="58.5" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="178.5"/>
+                                                </variation>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6V-XX-5lL">
+                                                <rect key="frame" x="373.5" y="0.0" width="186.5" height="128.5"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="84" y="0.0" width="42" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="373.5" y="0.0" width="186.5" height="178.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="128.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="78.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="117" y="0.0" width="59" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="178.5"/>
+                                                </variation>
+                                            </view>
+                                        </subviews>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="331"/>
+                                        </variation>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="178.5"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="128.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="78.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="176" height="331"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="178.5"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2ix-WT-lVu">
+                                        <rect key="frame" x="0.0" y="134.5" width="560" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fs7-fD-QOS">
+                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="128"/>
+                                                <color key="backgroundColor" red="1" green="0.51116898150000001" blue="0.03254181749" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="178"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="128"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="78"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="58.5" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="178"/>
+                                                </variation>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-Et-2Mg">
+                                                <rect key="frame" x="186.5" y="0.0" width="187" height="128"/>
+                                                <color key="backgroundColor" red="0.0" green="0.1431456804" blue="0.99824196099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="41.5" y="0.0" width="42" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="186.5" y="0.0" width="187" height="178"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="128"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="78"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="58.5" y="0.0" width="58.5" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="178"/>
+                                                </variation>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EuE-bx-nrL">
+                                                <rect key="frame" x="373.5" y="0.0" width="186.5" height="128"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="83.5" y="0.0" width="42" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="373.5" y="0.0" width="186.5" height="178"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="128"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="78"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="117" y="0.0" width="58.5" height="331"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="178"/>
+                                                </variation>
+                                            </view>
+                                        </subviews>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="145" y="0.0" width="125.5" height="331"/>
+                                        </variation>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="184.5" width="560" height="178"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="134.5" width="360" height="128"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="84.5" width="360" height="78"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="195" y="0.0" width="175.5" height="331"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="184.5" width="360" height="178"/>
+                                        </variation>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-7i-VGV">
+                                        <rect key="frame" x="0.0" y="268.5" width="560" height="128.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="289.5" y="0.0" width="126" height="331"/>
+                                        </variation>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="368.5" width="560" height="178.5"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="268.5" width="360" height="128.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="168.5" width="360" height="78.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="389.5" y="0.0" width="176" height="331"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="368.5" width="360" height="178.5"/>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5r7-gw-Q3S">
+                                        <rect key="frame" x="0.0" y="403" width="560" height="128"/>
+                                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="434.5" y="0.0" width="125.5" height="331"/>
+                                        </variation>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="553" width="560" height="178"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="403" width="360" height="128"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="253" width="360" height="78"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="584.5" y="0.0" width="175.5" height="331"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="553" width="360" height="178"/>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal" spacing="19"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c3K-UF-xTD" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="Ntg-GG-esa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c3K-UF-xTD" secondAttribute="trailing" id="XNU-Gn-CXJ"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="c3K-UF-xTD" secondAttribute="bottom" id="oda-6E-tXB"/>
+                            <constraint firstItem="c3K-UF-xTD" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="t2P-KO-tOX"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Rotating" image="second" id="cPa-gy-q4n" userLabel="Rotation"/>
+                    <connections>
+                        <outlet property="stack" destination="c3K-UF-xTD" id="WLP-tM-hNM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Nested-->
+        <scene sceneID="Vae-vZ-GbJ">
+            <objects>
+                <viewController storyboardIdentifier="NestedStacks" id="abb-7Y-OX3" userLabel="Nested" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wnd-1L-idJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="1ei-cZ-0et"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qrs-Zn-GSj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-3o-Qnr">
+                                <rect key="frame" x="20" y="20" width="560" height="91.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="foX-pU-oMn">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="41"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oTt-7Q-jEx">
+                                                <rect key="frame" x="0.0" y="0.0" width="471.5" height="41"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-F2-cgY" userLabel="Title">
+                                                        <rect key="frame" x="0.0" y="0.0" width="471.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="471.5" height="20.5"/>
+                                                        </variation>
+                                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="271.5" height="20.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="271.5" height="20.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="671.5" height="20.5"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtitle Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgg-N8-NTf">
+                                                        <rect key="frame" x="0.0" y="20.5" width="471.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="20.5" width="471.5" height="20.5"/>
+                                                        </variation>
+                                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="20.5" width="271.5" height="20.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="20.5" width="271.5" height="20.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="20.5" width="671.5" height="20.5"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="471.5" height="41"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="271.5" height="41"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="271.5" height="41"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="671.5" height="41"/>
+                                                </variation>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" fixedFrame="YES" text="Value Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y3-LE-i9k">
+                                                <rect key="frame" x="471.5" y="0.0" width="88.5" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="471.5" y="0.0" width="88.5" height="41"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="271.5" y="0.0" width="88.5" height="41"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="271.5" y="0.0" width="88.5" height="41"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="671.5" y="0.0" width="88.5" height="41"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="41"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="41"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="760" height="41"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TxI-Wq-My4">
+                                        <rect key="frame" x="0.0" y="41" width="560" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" fixedFrame="YES" text="This goes somewhere" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRa-jv-DWD">
+                                                <rect key="frame" x="0.0" y="0.0" width="514" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="714" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAl-tp-dVu">
+                                                <rect key="frame" x="514" y="0.0" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="314" y="0.0" width="46" height="30"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="314" y="0.0" width="46" height="30"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="714" y="0.0" width="46" height="30"/>
+                                                </variation>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="41" width="360" height="30"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="41" width="360" height="30"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="41" width="760" height="30"/>
+                                        </variation>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" fixedFrame="YES" text="Just a label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOg-Lp-JLj">
+                                        <rect key="frame" x="0.0" y="71" width="560" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="71" width="560" height="20.5"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="71" width="360" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="71" width="360" height="20.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="71" width="760" height="20.5"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="EFi-3o-Qnr" secondAttribute="trailing" id="156-Pd-W8l"/>
+                            <constraint firstItem="EFi-3o-Qnr" firstAttribute="leading" secondItem="qrs-Zn-GSj" secondAttribute="leadingMargin" id="bET-HF-fAl"/>
+                            <constraint firstItem="EFi-3o-Qnr" firstAttribute="top" secondItem="wnd-1L-idJ" secondAttribute="bottom" id="tVj-ex-4W6"/>
+                            <constraint firstItem="1ei-cZ-0et" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EFi-3o-Qnr" secondAttribute="bottom" id="wiO-pD-HOe"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Nested" id="r1H-q5-Vkz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTS-16-L1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-476" y="2731"/>
+        </scene>
+        <!--Constraints-->
+        <scene sceneID="QQH-fL-aso">
+            <objects>
+                <viewController storyboardIdentifier="Constraints" id="dhS-fZ-diu" userLabel="Constraints" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mV2-Fs-eQZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="XxV-3W-xdJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dhj-mN-cV2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9G-vO-Vt3">
+                                <rect key="frame" x="20" y="61" width="560" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="This goes somewhere" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhF-HC-1tN">
+                                        <rect key="frame" x="0.0" y="0.0" width="514" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fI-aq-koN">
+                                        <rect key="frame" x="514" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FhF-HC-1tN" firstAttribute="leading" secondItem="J9G-vO-Vt3" secondAttribute="leading" id="6h9-qe-BDn"/>
+                                    <constraint firstAttribute="trailing" secondItem="2fI-aq-koN" secondAttribute="trailing" id="Ara-bH-btF"/>
+                                    <constraint firstAttribute="bottom" secondItem="FhF-HC-1tN" secondAttribute="bottom" id="JJL-yk-KhS"/>
+                                    <constraint firstItem="FhF-HC-1tN" firstAttribute="top" secondItem="J9G-vO-Vt3" secondAttribute="top" id="LeY-Fi-d5n"/>
+                                    <constraint firstItem="2fI-aq-koN" firstAttribute="leading" secondItem="FhF-HC-1tN" secondAttribute="trailing" id="NHo-6d-RmV"/>
+                                    <constraint firstItem="2fI-aq-koN" firstAttribute="top" secondItem="J9G-vO-Vt3" secondAttribute="top" id="ZSv-GY-jpG"/>
+                                    <constraint firstAttribute="bottom" secondItem="2fI-aq-koN" secondAttribute="bottom" id="wva-GW-zdA"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just a label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeE-Y7-2OP">
+                                <rect key="frame" x="20" y="91" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSh-yu-BYh">
+                                <rect key="frame" x="20" y="20" width="560" height="41"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d98-Eh-4dN">
+                                        <rect key="frame" x="0.0" y="0.0" width="471.5" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUW-Np-pup">
+                                                <rect key="frame" x="0.0" y="20.5" width="471.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VT2-VT-GGH">
+                                                <rect key="frame" x="0.0" y="0.0" width="471.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="VT2-VT-GGH" firstAttribute="leading" secondItem="d98-Eh-4dN" secondAttribute="leading" id="00I-KP-cbN"/>
+                                            <constraint firstItem="VT2-VT-GGH" firstAttribute="top" secondItem="d98-Eh-4dN" secondAttribute="top" id="6cY-w0-9dV"/>
+                                            <constraint firstItem="gUW-Np-pup" firstAttribute="leading" secondItem="d98-Eh-4dN" secondAttribute="leading" id="DCR-Qi-BYg"/>
+                                            <constraint firstAttribute="trailing" secondItem="VT2-VT-GGH" secondAttribute="trailing" id="PRK-yL-fRk"/>
+                                            <constraint firstAttribute="bottom" secondItem="gUW-Np-pup" secondAttribute="bottom" id="XiA-TH-0DC"/>
+                                            <constraint firstAttribute="trailing" secondItem="gUW-Np-pup" secondAttribute="trailing" id="e7P-cf-21l"/>
+                                            <constraint firstItem="gUW-Np-pup" firstAttribute="top" secondItem="VT2-VT-GGH" secondAttribute="bottom" id="vvq-Jy-nnW"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Value Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxZ-hb-794">
+                                        <rect key="frame" x="471.5" y="0.0" width="88.5" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="d98-Eh-4dN" secondAttribute="bottom" id="09T-oG-XXC"/>
+                                    <constraint firstItem="CxZ-hb-794" firstAttribute="leading" secondItem="d98-Eh-4dN" secondAttribute="trailing" id="WpP-SK-T4M"/>
+                                    <constraint firstItem="CxZ-hb-794" firstAttribute="top" secondItem="uSh-yu-BYh" secondAttribute="top" id="ti7-5s-Vos"/>
+                                    <constraint firstAttribute="bottom" secondItem="CxZ-hb-794" secondAttribute="bottom" id="uyC-Ag-Rxr"/>
+                                    <constraint firstItem="d98-Eh-4dN" firstAttribute="top" secondItem="uSh-yu-BYh" secondAttribute="top" id="z87-Cg-L4R"/>
+                                    <constraint firstItem="d98-Eh-4dN" firstAttribute="leading" secondItem="uSh-yu-BYh" secondAttribute="leading" id="zf4-2Z-Mig"/>
+                                    <constraint firstAttribute="trailing" secondItem="CxZ-hb-794" secondAttribute="trailing" id="zjo-Dj-qye"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uSh-yu-BYh" secondAttribute="trailing" id="6D9-Cb-BFz"/>
+                            <constraint firstItem="KeE-Y7-2OP" firstAttribute="top" secondItem="J9G-vO-Vt3" secondAttribute="bottom" id="D35-nw-s0Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J9G-vO-Vt3" secondAttribute="trailing" id="RzR-QJ-OQs"/>
+                            <constraint firstItem="J9G-vO-Vt3" firstAttribute="leading" secondItem="dhj-mN-cV2" secondAttribute="leadingMargin" id="YKm-ia-DyT"/>
+                            <constraint firstItem="uSh-yu-BYh" firstAttribute="top" secondItem="mV2-Fs-eQZ" secondAttribute="bottom" id="cUK-JQ-Wie"/>
+                            <constraint firstItem="XxV-3W-xdJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KeE-Y7-2OP" secondAttribute="bottom" id="f0y-j0-EVd"/>
+                            <constraint firstItem="KeE-Y7-2OP" firstAttribute="leading" secondItem="dhj-mN-cV2" secondAttribute="leadingMargin" id="r8d-wC-vsM"/>
+                            <constraint firstItem="uSh-yu-BYh" firstAttribute="leading" secondItem="dhj-mN-cV2" secondAttribute="leadingMargin" id="vS0-pe-XET"/>
+                            <constraint firstItem="J9G-vO-Vt3" firstAttribute="top" secondItem="uSh-yu-BYh" secondAttribute="bottom" id="ypc-wu-JzM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KeE-Y7-2OP" secondAttribute="trailing" id="ziu-Qe-wWe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xMi-Hz-i2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="2731"/>
+        </scene>
+        <!--Animated-->
+        <scene sceneID="Ip6-Kp-uZE">
+            <objects>
+                <viewController id="DSZ-gd-ZSF" userLabel="Animated" customClass="AnimatedStackViewController" customModule="UIStackViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E8Z-zI-bKh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wqu-eF-89H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NRM-q2-ThV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="oBM-fe-Vqm">
+                                <rect key="frame" x="20" y="64" width="560" height="487"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d7h-lg-AOo">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="117.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hxk-df-umK">
+                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="117.5"/>
+                                                <color key="backgroundColor" cyan="1" magenta="0.0" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="67.5"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="178.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="117.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="78.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="253.5" height="67.5"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="178.5"/>
+                                                </variation>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mDK-NY-hjN">
+                                                <rect key="frame" x="186.5" y="0.0" width="187" height="117.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dF-QE-i2Z">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="39"/>
+                                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="22.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="59.5"/>
+                                                        </variation>
+                                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="39"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="26"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="253" height="22.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="59.5"/>
+                                                        </variation>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vX6-dS-vfG">
+                                                        <rect key="frame" x="0.0" y="39" width="187" height="39"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="22.5" width="187" height="22.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="59.5" width="187" height="59.5"/>
+                                                        </variation>
+                                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="39" width="120" height="39"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="26" width="120" height="26"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="22.5" width="253" height="22.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="59.5" width="120" height="59.5"/>
+                                                        </variation>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awq-ee-pff">
+                                                        <rect key="frame" x="0.0" y="78" width="187" height="39.5"/>
+                                                        <color key="backgroundColor" red="0.98594671489999997" green="0.0" blue="0.039444990460000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="45" width="187" height="22.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="119" width="187" height="59.5"/>
+                                                        </variation>
+                                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="78" width="120" height="39.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="52" width="120" height="26.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="45" width="253" height="22.5"/>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="119" width="120" height="59.5"/>
+                                                        </variation>
+                                                    </view>
+                                                </subviews>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="186.5" y="0.0" width="187" height="67.5"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="186.5" y="0.0" width="187" height="178.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="117.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="78.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="253.5" y="0.0" width="253" height="67.5"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="178.5"/>
+                                                </variation>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3R-v1-9Mi">
+                                                <rect key="frame" x="373.5" y="0.0" width="186.5" height="117.5"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="373.5" y="0.0" width="186.5" height="67.5"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="373.5" y="0.0" width="186.5" height="178.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="117.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="78.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="506.5" y="0.0" width="253.5" height="67.5"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="178.5"/>
+                                                </variation>
+                                            </view>
+                                        </subviews>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="67.5"/>
+                                        </variation>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="178.5"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="117.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="78.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="760" height="67.5"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="178.5"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VmL-AK-pgi">
+                                        <rect key="frame" x="0.0" y="123.5" width="560" height="117"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cc5-3l-jF1">
+                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="117"/>
+                                                <color key="backgroundColor" red="1" green="0.51116898150000001" blue="0.03254181749" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="67"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="178"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="117"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="78"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="253.5" height="67"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="178"/>
+                                                </variation>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQq-vO-D94">
+                                                <rect key="frame" x="186.5" y="0.0" width="187" height="117"/>
+                                                <color key="backgroundColor" red="0.0" green="0.1431456804" blue="0.99824196099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="186.5" y="0.0" width="187" height="67"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="186.5" y="0.0" width="187" height="178"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="117"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="78"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="253.5" y="0.0" width="253" height="67"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="178"/>
+                                                </variation>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5r-zg-TqU">
+                                                <rect key="frame" x="373.5" y="0.0" width="186.5" height="117"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="373.5" y="0.0" width="186.5" height="67"/>
+                                                </variation>
+                                                <variation key="heightClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="373.5" y="0.0" width="186.5" height="178"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="117"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="78"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="506.5" y="0.0" width="253.5" height="67"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="178"/>
+                                                </variation>
+                                            </view>
+                                        </subviews>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="73.5" width="560" height="67"/>
+                                        </variation>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="184.5" width="560" height="178"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="123.5" width="360" height="117"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="84.5" width="360" height="78"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="73.5" width="760" height="67"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="184.5" width="360" height="178"/>
+                                        </variation>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKX-ft-dAd">
+                                        <rect key="frame" x="0.0" y="246.5" width="560" height="117.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="146.5" width="560" height="67.5"/>
+                                        </variation>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="368.5" width="560" height="178.5"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="246.5" width="360" height="117.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="168.5" width="360" height="78.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="146.5" width="760" height="67.5"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="368.5" width="360" height="178.5"/>
+                                        </variation>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" layoutMarginsRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1DN-Vy-psJ">
+                                        <rect key="frame" x="0.0" y="370" width="560" height="117"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NiX-tm-iMQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="58.5"/>
+                                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="33.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="58.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="760" height="33.5"/>
+                                                </variation>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hd4-ci-yuC">
+                                                <rect key="frame" x="0.0" y="58.5" width="560" height="58.5"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="33.5" width="560" height="33.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="58.5" width="360" height="58.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="33.5" width="760" height="33.5"/>
+                                                </variation>
+                                            </view>
+                                        </subviews>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="220" width="560" height="67"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="370" width="360" height="117"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="220" width="760" height="67"/>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oBM-fe-Vqm" firstAttribute="leading" secondItem="NRM-q2-ThV" secondAttribute="leadingMargin" id="Ej6-EN-am0"/>
+                            <constraint firstItem="Wqu-eF-89H" firstAttribute="top" secondItem="oBM-fe-Vqm" secondAttribute="bottom" id="an2-EG-5YG"/>
+                            <constraint firstItem="oBM-fe-Vqm" firstAttribute="top" secondItem="E8Z-zI-bKh" secondAttribute="bottom" id="f8j-At-R2V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oBM-fe-Vqm" secondAttribute="trailing" id="m7p-Zv-Meu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e7q-AW-fab">
+                        <barButtonItem key="rightBarButtonItem" title="Animate" id="T4w-sg-CFY" userLabel="Animate">
+                            <connections>
+                                <action selector="doAxisBarItemAction" destination="DSZ-gd-ZSF" id="07K-nc-86V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outletCollection property="stacks" destination="oBM-fe-Vqm" collectionClass="NSMutableArray" id="pAu-AD-gt3"/>
+                        <outletCollection property="stacks" destination="d7h-lg-AOo" collectionClass="NSMutableArray" id="J15-2W-Z5K"/>
+                        <outletCollection property="stacks" destination="mDK-NY-hjN" collectionClass="NSMutableArray" id="bz0-Mo-OcR"/>
+                        <outletCollection property="stacks" destination="VmL-AK-pgi" collectionClass="NSMutableArray" id="sJk-Yg-41U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Slc-QL-FhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1570" y="1891"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -55,11 +1199,153 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="eex-gr-rCf" kind="relationship" relationship="viewControllers" id="1DP-Tf-6jG"/>
+                        <segue destination="lI5-lF-Aia" kind="relationship" relationship="viewControllers" id="gB5-4N-tWc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-496" y="1067"/>
+        </scene>
+        <!--Animations-->
+        <scene sceneID="46e-SY-QWE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lI5-lF-Aia" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Animations" id="33r-NR-em7" userLabel="Animated"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZvF-XY-N5G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DSZ-gd-ZSF" kind="relationship" relationship="rootViewController" id="hPe-g7-quf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYS-aX-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="1891"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="a9h-cm-fnb">
+            <objects>
+                <viewController id="eex-gr-rCf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PmB-8F-QTx"/>
+                        <viewControllerLayoutGuide type="bottom" id="W5R-69-7BU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZDK-kO-Tef">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ut9-jF-2eS" userLabel="Root Stack View">
+                                <rect key="frame" x="20" y="0.0" width="560" height="551"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Lo-hM-qVz" userLabel="Stack View 1">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="551"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCA-Pb-jd4">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="275.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="175.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="138"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="351"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V65-8q-RWb">
+                                                <rect key="frame" x="0.0" y="275.5" width="280" height="275.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="175.5" width="280" height="175.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="138" width="360" height="137.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="190" y="0.0" width="190" height="351"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="351"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="275.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" axis="horizontal" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="380" height="351"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bhb-QM-LRp" userLabel="Stack View 2">
+                                        <rect key="frame" x="280" y="0.0" width="280" height="551"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-vM-vml">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="275.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="175.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="138"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="351"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wr4-8K-df7">
+                                                <rect key="frame" x="0.0" y="275.5" width="280" height="275.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="175.5" width="280" height="175.5"/>
+                                                </variation>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="138" width="360" height="137.5"/>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                    <rect key="frame" x="190" y="0.0" width="190" height="351"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <variation key="heightClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="280" y="0.0" width="280" height="351"/>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="275.5" width="360" height="275.5"/>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" axis="horizontal" fixedFrame="YES">
+                                            <rect key="frame" x="380" y="0.0" width="380" height="351"/>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <variation key="widthClass=compact" axis="vertical"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ut9-jF-2eS" firstAttribute="leading" secondItem="ZDK-kO-Tef" secondAttribute="leadingMargin" id="3QL-4B-8Ug"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ut9-jF-2eS" secondAttribute="trailing" id="PPe-rP-Rek"/>
+                            <constraint firstItem="Ut9-jF-2eS" firstAttribute="top" secondItem="ZDK-kO-Tef" secondAttribute="topMargin" id="Yjb-I1-vVo"/>
+                            <constraint firstItem="W5R-69-7BU" firstAttribute="top" secondItem="Ut9-jF-2eS" secondAttribute="bottom" id="fDu-2L-gY9"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="euY-iD-zXq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uhp-F2-IZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="1115"/>
         </scene>
     </scenes>
     <resources>
