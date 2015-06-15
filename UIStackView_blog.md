@@ -112,7 +112,7 @@ The _Root Stack View_ is given a default axis of horizontal and then a vertical 
 
 ## Summary
 
-Stack view looks like it's going to be a vital tool for every iOS developer targetting iOS 9 and up. It allows the creation of complex layouts with no code and very few manual constraints. It can easily adapt to different size classes, and inserting and deleting items is a breeze. 
+Stack view looks like it's going to be a vital tool for every iOS developer targeting iOS 9 and up. It allows the creation of complex layouts with no code and very few manual constraints. It can easily adapt to different size classes, and inserting and deleting items is a breeze. 
 
 The demo code for the examples can be viewed on Mubaloo's GitHub account. // TODO: Link
 
