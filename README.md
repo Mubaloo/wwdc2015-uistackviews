@@ -84,7 +84,7 @@ Another great feature of stack view is that it allows its layout to be based on 
 
 Take this simple layout, which consists of nested stack views:
 
-![Screen shot of layout in interface builder](PostResources/NestedHiearchy.png =x480) ![Screen shot of the layout in portrait](PostResources/Portrait.png =x480)
+![Screen shot of layout in interface builder](PostResources/NestedHiearchy.png) ![Screen shot of the layout in portrait](PostResources/Portrait.png)
 
 If this layout is used in landscape, it gets a bit squashed:
 
