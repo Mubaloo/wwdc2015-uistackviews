@@ -66,10 +66,11 @@ Here we have a vertical stack view with some controls in it to change the state 
 
 To show and hide the relevant controls, we can literally just hide and show the views in question:
 
-	@IBAction func doImageSwitchChangedAction() {
-	    imageRow.hidden = !imageSwitch.on
-	}
-	
+```swift
+@IBAction func doImageSwitchChangedAction() {
+	imageRow.hidden = !imageSwitch.on
+}
+```	
 
 Normally hiding a view laid out with Auto Layout doesn't remove the view from layout pass calculations, so you're just left with an empty space where the view was. Stack view automatically updates its layout when the `hidden` property of any of its `arrangedSubviews` are changed. 
 
