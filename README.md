@@ -56,7 +56,7 @@ This layout uses 4 stack views of different orientations. The top two rows are n
 
 ## Dynamic layouts
 
-So what about the more complex use case we discussed above, where view's visibility is based on the input of other views?
+So what about the more complex use case we discussed above, where a view's visibility is based on the input of other views?
 
 <img alt="Screen shot of dynamic stack view layout" src="PostResources/Dynamic.png" width="80%" />
 
