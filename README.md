@@ -4,7 +4,7 @@
 
 Many of the apps we make have a screen consisting of a number of text fields where the user can enter some information. A classic example of this is a registration page:
 
-![Registration page](PostResources/registration_uk.png)
+<img alt="Registration page" src="PostResources/registration_uk.png" width="25%" />
 
 If the page is quite simple, where all fields must be filled out to continue, the simplest way is often to have each field as a cell in a `UITableView`. If the UI is a bit more complex, you can have different prototypes for the different styles of field. You'll most likely be left with a rather large `tableView(_:cellForRowAtIndexPath:)` method, with a switch statement configuring each row / field.
 
@@ -14,7 +14,7 @@ Xcode 6 improved on this with the ability to add static cells to a `UITableViewC
 
 Whilst using a table view is usually fine for simple cases, fields often have dependencies based on the input of other fields. In the above example, if you select _United States_ as the country, another field appears to allow you to pick your state. 
 
-![Screenshot of registration form with dynamic content based on form input](PostResources/registration_us.png)
+<img alt="Screenshot of registration form with dynamic content based on form input" src="PostResources/registration_us.png" width="50%" />
 
 This sort of requirement makes it much more complicated to use a `UITableView` for screens like this. You have to check the value of the related field and add or remove rows as necessary, as well as ensuring that your data source and delegate methods are returning the correct values depending on the presence of a given row.
 
@@ -24,7 +24,8 @@ This registration page was actually constructed using constraints to keep things
 
 As usual at WWDC, Apple introduced the new technologies for developers with their typical slide:
 
-![WWDC 2015: New developer technologies summary slide](PostResources/wwdc_2015_dev_anno.png)
+<img alt="WWDC 2015: New developer technologies summary slide" src="PostResources/wwdc_2015_dev_anno.png" width="80%" />
+
 <small>(Image from [Apple 2015 Live Event](http://www.apple.com/live/2015-june-event/))</small>
 
 Other than their appearance on this slide, **stack views** were not mentioned during the keynote. Intrigued, we dived straight into the [pre-release documentation](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html) to see what they were!
@@ -41,7 +42,7 @@ The rest of this post will cover some use cases and some clever stuff you can do
 
 Take the following layout:
 
-![Screenshot of Interface Builder showing all the constraints](PostResources/Constraints.png)
+<img alt="Screenshot of Interface Builder showing all the constraints" src="PostResources/Constraints.png" width="80%" />
 
 This view has **31** constraints in Interface Builder – they wouldn't all fit on the screen! It's difficult to update or manage in Interface Builder: if you delete the centre row, you'd have to add the constraints to space the top and bottom views back in. Additionally, changing the spacing of the views consists of changing the constants of multiple constraints. This gets even more messy when adding lots of rows.
 
@@ -57,7 +58,7 @@ This layout uses 4 stack views of different orientations. The top two rows are n
 
 So what about the more complex use case we discussed above, where view's visibility is based on the input of other views?
 
-![Screen shot of dynamic stack view layout](PostResources/Dynamic.png)
+<img alt="Screen shot of dynamic stack view layout" src="PostResources/Dynamic.png" width="80%" />
 
 Here we have a vertical stack view with some controls in it to change the state of the views[^1]. 
 
@@ -72,11 +73,11 @@ To show and hide the relevant controls, we can literally just hide and show the 
 
 Normally hiding a view laid out with Auto Layout doesn't remove the view from layout pass calculations, so you're just left with an empty space where the view was. Stack view automatically updates its layout when the `hidden` property of any of its `arrangedSubviews` are changed. 
 
-![Animation of dynamic screen in action](PostResources/Dynamic.gif)
+<img alt="Animation of dynamic screen in action" src="PostResources/Dynamic.gif" width="25%" />
 
 You can easily animate this layout change by just placing the above code in an animation block. Reconfiguring nested stack views in any animation block can give simple but effective animations of content changes:
 
-![Animation of changing stack view properties in an animation block](PostResources/StackViewAnimation.gif)
+<img alt="Animation of changing stack view properties in an animation block" src="PostResources/StackViewAnimation.gif" width="25%" ?>
 
 ## Size Classes
 
@@ -84,21 +85,22 @@ Another great feature of stack view is that it allows its layout to be based on 
 
 Take this simple layout, which consists of nested stack views:
 
-![Screen shot of layout in interface builder](PostResources/NestedHiearchy.png) ![Screen shot of the layout in portrait](PostResources/Portrait.png)
+<img alt="Screen shot of layout in interface builder" src="PostResources/NestedHiearchy.png" height="360px" /> <img alt="Screen shot of the layout in portrait" src="PostResources/Portrait.png" height="360px" />
 
 If this layout is used in landscape, it gets a bit squashed:
 
-![Screen shot of the squashedlayout in landscape](PostResources/LandscapeSquashed.png)
+<img alt="Screen shot of the squashedlayout in landscape" src="PostResources/LandscapeSquashed.png" width="80%" />
 
 To improve the appearance of this view, we can give the stack view different `axis` values depending on the size class. In this example, we could pick a vertical layout for compact width, but a horizontal layout for compact height. This means we can alter the whole layout of the screen without writing one line of code!
 
-![Attributes based on specific size classes](PostResources/SizeClassAttributes.png)
+<img alt="Attributes based on specific size classes" src="PostResources/SizeClassAttributes.png" width="50%" />
 
 The same thing can be applied to the _Alignment_, _Distribution_, _Spacing_, _Baseline Relative_ and _Layout Margins Relative_ attributes. The above example uses a spacing of 19 for the compact height size class. This is exactly the same as the way constraints can be adjusted for different size classes.
 
 Now when rotating the device, the layout changes to a horizontally stacked group (well it should [^2]):
 
-![Screen shot of the layout in landscape](PostResources/Landscape.png)
+<img alt="Screen shot of the layout in landscape" src="PostResources/Landscape.png" width="80%" />
+
 <small>_Animated example to follow once bug is fixed_</small>
 <!--
 ![Animation showing the transition from a vertical stack to a horizontal stack on rotation](PostResources/)
@@ -108,12 +110,13 @@ Now when rotating the device, the layout changes to a horizontally stacked group
 
 This can be taken further; for example, having 4 rows of items when there is a compact width, 4 columns when there is a compact height with a regular width, and any other layouts showing a 2x2 grid:
 
-![Animation showing the transition from 4 rows, to 2x2 to 4 columns](PostResources/SizeClassGrid.gif)
+<img alt="Animation showing the transition from 4 rows, to 2x2 to 4 columns" src="PostResources/SizeClassGrid.gif" width="80%" />
+
 <small>_Better example to follow once bug is fixed_</small>
 
 The above example was completely created in Interface Builder without any code.
 
-![View hiearchy](PostResources/4stack.png)
+<img alt="View hiearchy" src="PostResources/4stack.png" width="25%" />
 
 The _Root Stack View_ is given a default axis of horizontal and then a vertical axis for compact widths. The two inner stack views then both have horizontal axises for a compact height, falling back to vertical when needed.
 
