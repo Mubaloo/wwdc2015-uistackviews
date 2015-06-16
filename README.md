@@ -60,9 +60,7 @@ So what about the more complex use case we discussed above, where a view's visib
 
 <img alt="Screen shot of dynamic stack view layout" src="PostResources/Dynamic.png" width="80%" />
 
-Here we have a vertical stack view with some controls in it to change the state of the views[^1]. 
-
-[^1]: Note that the stretched `UISwitch` may be a bug in Interface Builder, as it appears correctly at runtime.
+Here we have a vertical stack view with some controls in it to change the state of the views<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>. 
 
 To show and hide the relevant controls, we can literally just hide and show the views in question:
 
@@ -98,7 +96,7 @@ To improve the appearance of this view, we can give the stack view different `ax
 
 The same thing can be applied to the _Alignment_, _Distribution_, _Spacing_, _Baseline Relative_ and _Layout Margins Relative_ attributes. The above example uses a spacing of 19 for the compact height size class. This is exactly the same as the way constraints can be adjusted for different size classes.
 
-Now when rotating the device, the layout changes to a horizontally stacked group (well it should [^2]):
+Now when rotating the device, the layout changes to a horizontally stacked group (well it should<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>):
 
 <img alt="Screen shot of the layout in landscape" src="PostResources/Landscape.png" width="80%" />
 
@@ -106,8 +104,6 @@ Now when rotating the device, the layout changes to a horizontally stacked group
 <!--
 ![Animation showing the transition from a vertical stack to a horizontal stack on rotation](PostResources/)
 -->
-
-[^2]: This does not actually work in iOS 9 beta 1 (https://forums.developer.apple.com/message/10510#10510)
 
 This can be taken further; for example, having 4 rows of items when there is a compact width, 4 columns when there is a compact height with a regular width, and any other layouts showing a 2x2 grid:
 
@@ -130,3 +126,13 @@ The demo code for the examples can be viewed on Mubaloo's [GitHub](https://githu
 As mentioned above, the [iOS 9 pre-release documentation](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html) are also a great place to start as well as the WWDC session [Implementing UI Designs in Interface Builder](https://developer.apple.com/videos/wwdc/2015/?id=407).
 
 This post will be kept up to date with any changes that are made to `UIStackView` before iOS 9 is finally released.
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Note that the stretched <code>UISwitch</code> may be a bug in Interface Builder, as it appears correctly at runtime.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>This does not actually work in iOS 9 beta 1 (https://forums.developer.apple.com/message/10510#10510)<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
