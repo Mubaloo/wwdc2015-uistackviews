@@ -125,7 +125,7 @@ The _Root Stack View_ is given a default axis of horizontal and then a vertical 
 
 Stack view looks like it's going to be a vital tool for every iOS developer targeting iOS 9 and up. It allows the creation of complex layouts with no code and very few manual constraints. It can easily adapt to different size classes, and inserting and deleting items is a breeze. 
 
-The demo code for the examples can be viewed on Mubaloo's GitHub account. // TODO: Link
+The demo code for the examples can be viewed on Mubaloo's [GitHub](https://github.com/Mubaloo/wwdc2015-uistackviews) account.
 
 As mentioned above, the [iOS 9 pre-release documentation](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html) are also a great place to start as well as the WWDC session [Implementing UI Designs in Interface Builder](https://developer.apple.com/videos/wwdc/2015/?id=407).
 
