@@ -93,7 +93,7 @@ If this layout is used in landscape, it gets a bit squashed:
 
 To improve the appearance of this view, we can give the stack view different `axis` values depending on the size class. In this example, we could pick a vertical layout for compact width, but a horizontal layout for compact height. This means we can alter the whole layout of the screen without writing one line of code!
 
-<img alt="Attributes based on specific size classes" src="PostResources/SizeClassAttributes.png" width="50%" />
+<img alt="Attributes based on specific size classes" src="PostResources/SizeClassAttributes.png" width="35%" />
 
 The same thing can be applied to the _Alignment_, _Distribution_, _Spacing_, _Baseline Relative_ and _Layout Margins Relative_ attributes. The above example uses a spacing of 19 for the compact height size class. This is exactly the same as the way constraints can be adjusted for different size classes.
 
